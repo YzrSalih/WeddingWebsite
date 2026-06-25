@@ -127,7 +127,7 @@ export default function Countdown({ targetDate }) {
         transition={{ delay: 0.5, duration: 0.6 }}
         style={{ marginTop: 44, fontFamily: 'Lato, sans-serif', fontSize: 15, color: '#5C3040', letterSpacing: '0.08em' }}
       >
-        29 Ağustos 2026 · Cumartesi · Saat 18:30
+        29 Ağustos 2026 · Cumartesi · Saat 19:00
       </motion.p>
     </section>
   )

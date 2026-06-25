@@ -65,7 +65,7 @@ export default function Footer({ config }) {
           </div>
 
           {/* Navigasyon */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, marginBottom: 28 }}>
+          <div className="footer-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
             {[{href:'#countdown',label:'Geri Sayım'},{href:'#details',label:'Detaylar'},{href:'#rsvp',label:'Katılım'}].map(l => (
               <a key={l.href} href={l.href} style={{
                 fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C8A0A8',
@@ -80,9 +80,6 @@ export default function Footer({ config }) {
             ))}
           </div>
 
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#E8C8D0' }}>
-            Aileniz ve sevdiklerinizle görüşmek üzere 🌸
-          </p>
         </motion.div>
       </div>
     </footer>

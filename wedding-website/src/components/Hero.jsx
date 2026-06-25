@@ -301,7 +301,7 @@ export default function Hero({ config }) {
             2026
           </p>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: C.dateGold, letterSpacing: '0.2em', textTransform: 'uppercase', margin: '0 0 4px', fontWeight: 600 }}>
-            Cumartesi · 18:30
+            Cumartesi · 19:00
           </p>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.dateSub, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0, fontWeight: 500 }}>
             Modularna 3D — Varşova

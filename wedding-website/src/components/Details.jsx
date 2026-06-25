@@ -105,7 +105,7 @@ export default function Details({ config }) {
                 <rect x="6" y="12" width="4" height="4" rx="0.5" fill="#C4828E" opacity="0.4"/>
               </svg>
             }
-            lines={['29 Ağustos 2026', 'Cumartesi', 'Saat 18:30']}
+            lines={['29 Ağustos 2026', 'Cumartesi', 'Saat 19:00']}
           />
           <DetailCard
             delay={0.12} title="Mekan"

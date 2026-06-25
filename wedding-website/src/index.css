@@ -63,6 +63,17 @@ body {
   background: #C9A96E;
 }
 
+.footer-nav-links {
+  margin-top: 42px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .footer-nav-links {
+    margin-top: 34px;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #FDF8F0; }

@@ -68,7 +68,7 @@ export default function RSVP() {
             Düğünümüze Davetlisiniz
           </h2>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 1.5vw, 16px)', color: '#5C3040', lineHeight: 1.7 }}>
-            Lütfen 29 Ağustos saat 18:30'da gerçekleşecek olan<br/>düğünümüze katılım durumunuzu belirtiniz.
+            Lütfen 29 Ağustos saat 19:00'da gerçekleşecek olan<br/>düğünümüze katılım durumunuzu belirtiniz.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 16 }}>
             <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>

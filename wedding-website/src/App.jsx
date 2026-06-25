@@ -9,10 +9,10 @@ import Footer from './components/Footer'
 const WEDDING = {
   bride: 'Emel',
   groom: 'Salih',
-  date: new Date('2026-08-29T18:30:00'),
+  date: new Date('2026-08-29T19:00:00'),
   dateDisplay: '29 Ağustos 2026',
   dayName: 'Cumartesi',
-  time: '18:30',
+  time: '19:00',
   venue: 'Modularna 3D',
   city: 'Varşova',
   address: 'Varşova, Polonya',
