@@ -23,18 +23,18 @@ function TimeBox({ value, label, index }) {
     >
       <div style={{
         position: 'relative',
-        width: 'clamp(64px, 17vw, 90px)',
-        height: 'clamp(72px, 19vw, 100px)',
+        width: 'clamp(80px, 16vw, 130px)',
+        height: 'clamp(90px, 18vw, 148px)',
         background: 'linear-gradient(145deg, #FFFAFA, #FDF0F0)',
         border: '1px solid rgba(196,130,142,0.25)',
-        borderRadius: 14,
-        boxShadow: '0 4px 20px rgba(196,130,142,0.1), inset 0 1px 0 rgba(255,255,255,0.9)',
+        borderRadius: 18,
+        boxShadow: '0 6px 28px rgba(196,130,142,0.12), inset 0 1px 0 rgba(255,255,255,0.9)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}>
-        <div style={{ position:'absolute', top:6, left:6, width:9, height:9, borderTop:'1px solid #C4828E', borderLeft:'1px solid #C4828E', opacity:0.4 }}/>
-        <div style={{ position:'absolute', top:6, right:6, width:9, height:9, borderTop:'1px solid #C4828E', borderRight:'1px solid #C4828E', opacity:0.4 }}/>
-        <div style={{ position:'absolute', bottom:6, left:6, width:9, height:9, borderBottom:'1px solid #C4828E', borderLeft:'1px solid #C4828E', opacity:0.4 }}/>
-        <div style={{ position:'absolute', bottom:6, right:6, width:9, height:9, borderBottom:'1px solid #C4828E', borderRight:'1px solid #C4828E', opacity:0.4 }}/>
+        <div style={{ position:'absolute', top:8, left:8, width:12, height:12, borderTop:'1px solid #C4828E', borderLeft:'1px solid #C4828E', opacity:0.4 }}/>
+        <div style={{ position:'absolute', top:8, right:8, width:12, height:12, borderTop:'1px solid #C4828E', borderRight:'1px solid #C4828E', opacity:0.4 }}/>
+        <div style={{ position:'absolute', bottom:8, left:8, width:12, height:12, borderBottom:'1px solid #C4828E', borderLeft:'1px solid #C4828E', opacity:0.4 }}/>
+        <div style={{ position:'absolute', bottom:8, right:8, width:12, height:12, borderBottom:'1px solid #C4828E', borderRight:'1px solid #C4828E', opacity:0.4 }}/>
 
         <motion.span
           key={value}
@@ -43,7 +43,7 @@ function TimeBox({ value, label, index }) {
           transition={{ duration: 0.2 }}
           style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 'clamp(26px, 7vw, 42px)',
+            fontSize: 'clamp(32px, 7vw, 58px)',
             color: '#4A2C35', fontWeight: 400, lineHeight: 1,
           }}
         >
@@ -52,8 +52,8 @@ function TimeBox({ value, label, index }) {
       </div>
 
       <span style={{
-        fontFamily: 'Lato, sans-serif', fontSize: 10,
-        color: '#C4828E', textTransform: 'uppercase', letterSpacing: '0.22em',
+        fontFamily: 'Lato, sans-serif', fontSize: 11,
+        color: '#C4828E', textTransform: 'uppercase', letterSpacing: '0.22em', fontWeight: 600,
       }}>
         {label}
       </span>
@@ -80,7 +80,7 @@ export default function Countdown({ targetDate }) {
     <section
       id="countdown"
       style={{
-        padding: '72px 24px',
+        padding: 'clamp(72px, 10vw, 120px) 24px',
         textAlign: 'center',
         background: 'linear-gradient(180deg, #FAF0F0 0%, #FDF6F2 100%)',
       }}
@@ -90,29 +90,29 @@ export default function Countdown({ targetDate }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        style={{ marginBottom: 40 }}
+        style={{ marginBottom: 56 }}
       >
-        <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 10 }}>
+        <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
           Düğüne Kadar
         </p>
-        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(22px, 5vw, 34px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
+        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 48px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
           Geri Sayım
         </h2>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 14 }}>
-          <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginTop: 18 }}>
+          <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
+          <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
             <path d="M5 0L6 4L10 5L6 6L5 10L4 6L0 5L4 4L5 0Z" fill="#C4828E" opacity="0.6"/>
           </svg>
-          <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>
+          <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
         </div>
       </motion.div>
 
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: 'clamp(6px, 2vw, 18px)' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: 'clamp(8px, 2.5vw, 28px)' }}>
         {units.map((u, i) => (
-          <div key={u.label} style={{ display: 'flex', alignItems: 'flex-start', gap: 'clamp(6px, 2vw, 18px)' }}>
+          <div key={u.label} style={{ display: 'flex', alignItems: 'flex-start', gap: 'clamp(8px, 2.5vw, 28px)' }}>
             <TimeBox value={u.value} label={u.label} index={i} />
             {i < units.length - 1 && (
-              <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(22px, 5vw, 34px)', color: '#C4828E', opacity: 0.5, marginTop: 14, lineHeight: 1 }}>
+              <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 48px)', color: '#C4828E', opacity: 0.45, marginTop: 18, lineHeight: 1 }}>
                 :
               </span>
             )}
@@ -125,7 +125,7 @@ export default function Countdown({ targetDate }) {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        style={{ marginTop: 32, fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#A07880', letterSpacing: '0.06em' }}
+        style={{ marginTop: 44, fontFamily: 'Lato, sans-serif', fontSize: 15, color: '#5C3040', letterSpacing: '0.08em' }}
       >
         29 Ağustos 2026 · Cumartesi · Saat 18:30
       </motion.p>

@@ -42,16 +42,16 @@ export default function RSVP() {
   }
 
   const inputStyle = (field) => ({
-    width: '100%', padding: '13px 16px', borderRadius: 12, outline: 'none',
+    width: '100%', padding: '16px 20px', borderRadius: 14, outline: 'none',
     border: `1px solid ${errors[field] ? '#F4A0A0' : 'rgba(196,130,142,0.3)'}`,
-    background: '#FFFAFA', color: '#4A2C35', fontSize: 14,
+    background: '#FFFAFA', color: '#4A2C35', fontSize: 'clamp(14px, 1.4vw, 16px)',
     fontFamily: 'Lato, sans-serif', boxSizing: 'border-box',
     transition: 'border-color 0.2s, box-shadow 0.2s',
   })
 
   return (
-    <section id="rsvp" style={{ padding: '72px 24px', background: 'linear-gradient(180deg, #FDF6F2 0%, #FAF0F0 100%)' }}>
-      <div style={{ maxWidth: 460, margin: '0 auto' }}>
+    <section id="rsvp" style={{ padding: 'clamp(72px, 10vw, 120px) 32px', background: 'linear-gradient(180deg, #FDF6F2 0%, #FAF0F0 100%)' }}>
+      <div style={{ maxWidth: 580, margin: '0 auto' }}>
 
         {/* Başlık */}
         <motion.div
@@ -61,13 +61,13 @@ export default function RSVP() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: 40 }}
         >
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 10 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
             Katılım Bildirimi
           </p>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(22px, 5vw, 32px)', color: '#4A2C35', fontWeight: 400, margin: '0 0 12px' }}>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 44px)', color: '#4A2C35', fontWeight: 400, margin: '0 0 16px' }}>
             Düğünümüze Davetlisiniz
           </h2>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#A07880', lineHeight: 1.65 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 1.5vw, 16px)', color: '#5C3040', lineHeight: 1.7 }}>
             Lütfen 29 Ağustos saat 18:30'da gerçekleşecek olan<br/>düğünümüze katılım durumunuzu belirtiniz.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 16 }}>
@@ -119,7 +119,7 @@ export default function RSVP() {
           >
             {/* İsim */}
             <div>
-              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 12, color: '#7A5058', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>
+              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
                 İsim Soyisim <span style={{ color: '#C4828E' }}>*</span>
               </label>
               <input
@@ -134,14 +134,14 @@ export default function RSVP() {
 
             {/* Kişi sayısı */}
             <div>
-              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 12, color: '#7A5058', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 12 }}>
+              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 14 }}>
                 Kaç kişi katılacaksınız? <span style={{ color: '#C4828E' }}>*</span>
               </label>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 {['1','2','3','4','5'].map(n => (
                   <label key={n} style={{
-                    display: 'flex', alignItems: 'center', gap: 8,
-                    padding: '10px 18px', borderRadius: 12, cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', gap: 10,
+                    padding: '13px 22px', borderRadius: 14, cursor: 'pointer',
                     border: `1px solid ${form.guests === n ? '#C4828E' : 'rgba(196,130,142,0.25)'}`,
                     background: form.guests === n ? 'rgba(196,130,142,0.1)' : '#FFFAFA',
                     transition: 'all 0.2s', userSelect: 'none',
@@ -155,7 +155,7 @@ export default function RSVP() {
                     }}>
                       {form.guests === n && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#fff', display: 'block' }}/>}
                     </span>
-                    <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, color: form.guests === n ? '#4A2C35' : '#A07880' }}>{n}</span>
+                    <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: form.guests === n ? '#4A2C35' : '#5C3040' }}>{n}</span>
                   </label>
                 ))}
               </div>
@@ -164,7 +164,7 @@ export default function RSVP() {
 
             {/* Notlar */}
             <div>
-              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 12, color: '#7A5058', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>
+              <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
                 Notlar
               </label>
               <textarea
@@ -185,13 +185,13 @@ export default function RSVP() {
             <button
               type="submit" disabled={status === 'loading'}
               style={{
-                width: '100%', padding: '15px', borderRadius: 12, border: 'none',
+                width: '100%', padding: '18px', borderRadius: 14, border: 'none',
                 cursor: status === 'loading' ? 'not-allowed' : 'pointer',
                 background: 'linear-gradient(135deg, #C4828E, #A86070)',
                 color: '#FFF8F8',
-                fontFamily: 'Lato, sans-serif', fontSize: 12,
+                fontFamily: 'Lato, sans-serif', fontSize: 13,
                 letterSpacing: '0.22em', textTransform: 'uppercase',
-                boxShadow: '0 4px 18px rgba(196,130,142,0.3)',
+                boxShadow: '0 6px 24px rgba(196,130,142,0.35)',
                 opacity: status === 'loading' ? 0.75 : 1,
                 transition: 'opacity 0.2s, transform 0.15s',
               }}

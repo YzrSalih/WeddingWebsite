@@ -94,20 +94,21 @@ const confetti = [
 
 /* Renkler — soft blush & krem */
 const C = {
-  bg:       'linear-gradient(155deg, #FDF6F0 0%, #FAF0F0 35%, #FDF4F6 65%, #FBF6F0 100%)',
-  name:     '#4A2C35',       // koyu gül kurusu — okunabilir
-  amp:      '#C4828E',       // muted rose
-  ayet:     '#7A5058',       // orta ton
-  ayetLine: '#C9A96E',       // altın
-  body:     '#8C6068',
-  family:   '#A07880',
-  familyBold:'#7A5058',
-  dateNum:  '#4A2C35',
-  dateGold: '#C9A96E',
-  dateSub:  '#A07880',
-  border:   'rgba(201,169,110,0.28)',
-  line:     'rgba(201,169,110,0.45)',
-  glow:     'rgba(196,130,142,0.12)',
+  bg:        'linear-gradient(155deg, #FDF6F0 0%, #FAF0F0 35%, #FDF4F6 65%, #FBF6F0 100%)',
+  name:      '#3A1E28',       // koyu gül kurusu
+  amp:       '#B8687A',       // muted rose, biraz daha koyu
+  ayet:      '#3A1E28',       // ayet metni — tam okunabilir
+  ayetLine:  '#7A5A18',       // altın label — koyu
+  body:      '#3A1E28',       // davet metni
+  family:    '#5C3040',       // aile üst satır
+  familyBold:'#3A1E28',       // aile soyad
+  dateNum:   '#3A1E28',       // tarih sayıları
+  dateGold:  '#8B6820',       // tarih · noktaları (koyu altın)
+  dateSub:   '#5C3040',       // Cumartesi & mekan alt yazısı
+  scroll:    '#5C3040',       // Geri Sayım scroll yazısı
+  border:    'rgba(139,104,32,0.3)',
+  line:      'rgba(139,104,32,0.5)',
+  glow:      'rgba(196,130,142,0.1)',
 }
 
 export default function Hero({ config }) {
@@ -159,21 +160,22 @@ export default function Hero({ config }) {
         >
           <p style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 'clamp(13.5px, 3.4vw, 16px)',
+            fontSize: 'clamp(14.5px, 3.8vw, 17px)',
             color: C.ayet,
             fontStyle: 'italic',
             lineHeight: 1.9,
-            margin: '0 0 12px',
+            margin: '0 0 14px',
             letterSpacing: '0.015em',
+            fontWeight: 400,
           }}>
             "İçinizden, kendileriyle huzur bulacağınız eşler yaratması ve aranızda bir sevgi ve merhamet var etmesi O'nun varlığının delillerindendir."
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-            <div style={{ width: 28, height: 1, background: C.line }}/>
-            <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: C.ayetLine, letterSpacing: '0.28em', textTransform: 'uppercase' }}>
+            <div style={{ width: 36, height: 1, background: C.line }}/>
+            <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.ayetLine, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700 }}>
               Rûm Suresi 21. Ayet
             </span>
-            <div style={{ width: 28, height: 1, background: C.line }}/>
+            <div style={{ width: 36, height: 1, background: C.line }}/>
           </div>
         </motion.div>
 
@@ -264,13 +266,13 @@ export default function Hero({ config }) {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 28, marginBottom: 26 }}
         >
           <div>
-            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.family, fontWeight: 300, letterSpacing: '0.05em' }}>Mehtap - Erdem</div>
-            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: C.familyBold, fontWeight: 700, letterSpacing: '0.15em' }}>KARGIN</div>
+            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: C.family, fontWeight: 400, letterSpacing: '0.04em' }}>Mehtap - Erdem</div>
+            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: C.familyBold, fontWeight: 700, letterSpacing: '0.15em' }}>KARGIN</div>
           </div>
-          <div style={{ width: 1, height: 30, background: 'rgba(196,130,142,0.3)' }}/>
+          <div style={{ width: 1, height: 34, background: 'rgba(90,48,64,0.25)' }}/>
           <div>
-            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.family, fontWeight: 300, letterSpacing: '0.05em' }}>Fatma - Ahmet</div>
-            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: C.familyBold, fontWeight: 700, letterSpacing: '0.15em' }}>YAZAR</div>
+            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: C.family, fontWeight: 400, letterSpacing: '0.04em' }}>Fatma - Ahmet</div>
+            <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: C.familyBold, fontWeight: 700, letterSpacing: '0.15em' }}>YAZAR</div>
           </div>
         </motion.div>
 
@@ -298,10 +300,10 @@ export default function Hero({ config }) {
             08 <span style={{ color: C.dateGold, margin: '0 5px' }}>·</span>
             2026
           </p>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: C.dateGold, letterSpacing: '0.2em', textTransform: 'uppercase', margin: '0 0 3px' }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: C.dateGold, letterSpacing: '0.2em', textTransform: 'uppercase', margin: '0 0 4px', fontWeight: 600 }}>
             Cumartesi · 18:30
           </p>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: C.dateSub, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.dateSub, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0, fontWeight: 500 }}>
             Modularna 3D — Varşova
           </p>
         </motion.div>
@@ -321,7 +323,7 @@ export default function Hero({ config }) {
             <div style={{ width: 45, height: 1, background: `linear-gradient(to left, transparent, ${C.line})` }}/>
           </div>
           <a href="#countdown" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }}>
-            <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: C.family, letterSpacing: '0.3em', textTransform: 'uppercase' }}>
+            <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.scroll, letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 500 }}>
               Geri Sayım
             </span>
             <motion.div animate={{ y: [0, 7, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>

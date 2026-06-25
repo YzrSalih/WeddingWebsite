@@ -47,7 +47,7 @@ export default function Footer({ config }) {
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#C4828E', letterSpacing: '0.22em', marginBottom: 6 }}>
             29 · 08 · 2026
           </p>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5058', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 28 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#D4A8B4', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 28 }}>
             {config.venue} — {config.city}
           </p>
 
@@ -59,7 +59,7 @@ export default function Footer({ config }) {
             <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: 12, color: '#C8A0A8', lineHeight: 1.8, marginBottom: 8 }}>
               "...aranızda bir sevgi ve merhamet var etmesi O'nun varlığının delillerindendir."
             </p>
-            <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.15em' }}>
+            <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.15em', fontWeight: 700 }}>
               Rûm Suresi 21. Ayet
             </p>
           </div>
@@ -68,19 +68,19 @@ export default function Footer({ config }) {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, marginBottom: 28 }}>
             {[{href:'#countdown',label:'Geri Sayım'},{href:'#details',label:'Detaylar'},{href:'#rsvp',label:'Katılım'}].map(l => (
               <a key={l.href} href={l.href} style={{
-                fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#7A5058',
+                fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C8A0A8',
                 textDecoration: 'none', letterSpacing: '0.18em', textTransform: 'uppercase',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = '#C4828E'}
-              onMouseLeave={e => e.currentTarget.style.color = '#7A5058'}
+              onMouseEnter={e => e.currentTarget.style.color = '#F0D0D8'}
+              onMouseLeave={e => e.currentTarget.style.color = '#C8A0A8'}
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: '#5A3040' }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#E8C8D0' }}>
             Aileniz ve sevdiklerinizle görüşmek üzere 🌸
           </p>
         </motion.div>

@@ -10,7 +10,7 @@ function DetailCard({ icon, title, lines, mapUrl, delay }) {
       style={{
         position: 'relative',
         display: 'flex', flexDirection: 'column', alignItems: 'center',
-        textAlign: 'center', padding: '32px 24px', borderRadius: 18,
+        textAlign: 'center', padding: '48px 36px', borderRadius: 22,
         background: 'linear-gradient(145deg, #FFFAFA, #FDF4F4)',
         border: '1px solid rgba(196,130,142,0.18)',
         boxShadow: '0 6px 28px rgba(196,130,142,0.08)',
@@ -22,24 +22,24 @@ function DetailCard({ icon, title, lines, mapUrl, delay }) {
       <div style={{ position:'absolute', bottom:10, right:10, width:11, height:11, borderBottom:'1px solid #C4828E', borderRight:'1px solid #C4828E', opacity:0.35 }}/>
 
       <div style={{
-        width: 52, height: 52, borderRadius: '50%',
+        width: 68, height: 68, borderRadius: '50%',
         background: 'rgba(196,130,142,0.1)',
         border: '1px solid rgba(196,130,142,0.3)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        marginBottom: 16,
+        marginBottom: 22,
       }}>
         {icon}
       </div>
 
-      <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: '#4A2C35', fontWeight: 500, marginBottom: 12 }}>
+      <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(20px, 2.5vw, 26px)', color: '#4A2C35', fontWeight: 500, marginBottom: 16 }}>
         {title}
       </h3>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
         {lines.map((line, i) => (
           <p key={i} style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 13,
-            color: i === 0 ? '#C4828E' : '#8C6068',
+            fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 1.6vw, 17px)',
+            color: i === 0 ? '#C4828E' : '#5C3040',
             fontWeight: i === 0 ? 600 : 400, margin: 0,
           }}>
             {line}
@@ -49,13 +49,13 @@ function DetailCard({ icon, title, lines, mapUrl, delay }) {
 
       {mapUrl && (
         <a href={mapUrl} target="_blank" rel="noopener noreferrer" style={{
-          marginTop: 16,
-          display: 'inline-flex', alignItems: 'center', gap: 6,
-          fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase',
+          marginTop: 22,
+          display: 'inline-flex', alignItems: 'center', gap: 7,
+          fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase',
           color: '#C4828E', textDecoration: 'none',
-          border: '1px solid rgba(196,130,142,0.35)',
-          padding: '7px 14px', borderRadius: 20,
-          fontFamily: 'Lato, sans-serif',
+          border: '1px solid rgba(196,130,142,0.4)',
+          padding: '9px 20px', borderRadius: 24,
+          fontFamily: 'Lato, sans-serif', fontWeight: 600,
         }}>
           <svg width="10" height="13" viewBox="0 0 11 13" fill="none">
             <path d="M5.5 0C3.3 0 1.5 1.8 1.5 4C1.5 7.2 5.5 12 5.5 12C5.5 12 9.5 7.2 9.5 4C9.5 1.8 7.7 0 5.5 0ZM5.5 5.5C4.7 5.5 4 4.8 4 4C4 3.2 4.7 2.5 5.5 2.5C6.3 2.5 7 3.2 7 4C7 4.8 6.3 5.5 5.5 5.5Z" fill="currentColor"/>
@@ -69,32 +69,32 @@ function DetailCard({ icon, title, lines, mapUrl, delay }) {
 
 export default function Details({ config }) {
   return (
-    <section id="details" style={{ padding: '72px 24px', background: '#FDF6F2' }}>
-      <div style={{ maxWidth: 880, margin: '0 auto' }}>
+    <section id="details" style={{ padding: 'clamp(72px, 10vw, 120px) 32px', background: '#FDF6F2' }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto' }}>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: 48 }}
+          style={{ textAlign: 'center', marginBottom: 60 }}
         >
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 10 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
             Etkinlik Bilgileri
           </p>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(22px, 5vw, 34px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 48px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
             Düğün Detayları
           </h2>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 14 }}>
-            <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginTop: 18 }}>
+            <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M7 0L8.4 5.6L14 7L8.4 8.4L7 14L5.6 8.4L0 7L5.6 5.6L7 0Z" fill="#C4828E" opacity="0.5"/>
             </svg>
-            <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>
+            <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
           </div>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
           <DetailCard
             delay={0.05} title="Tarih"
             icon={
@@ -116,16 +116,6 @@ export default function Details({ config }) {
             }
             lines={[config.venue, config.city, 'Varşova, Polonya']}
             mapUrl={config.mapsUrl}
-          />
-          <DetailCard
-            delay={0.2} title="Kıyafet"
-            icon={
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <path d="M11 2L7.5 6H4.5L2.5 9L5.5 11V19H16.5V11L19.5 9L17.5 6H14.5L11 2Z" stroke="#C4828E" strokeWidth="1.3" strokeLinejoin="round" fill="none"/>
-                <path d="M7.5 6C7.5 6 9 9 11 9C13 9 14.5 6 14.5 6" stroke="#C4828E" strokeWidth="0.9" opacity="0.5"/>
-              </svg>
-            }
-            lines={['Şık Giyim', 'Davet kıyafeti', 'Smart casual']}
           />
         </div>
 
