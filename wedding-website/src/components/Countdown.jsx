@@ -61,7 +61,7 @@ function TimeBox({ value, label, index }) {
   )
 }
 
-export default function Countdown({ targetDate }) {
+export default function Countdown({ targetDate, t }) {
   const [time, setTime] = useState(getTimeLeft(targetDate))
 
   useEffect(() => {
@@ -70,10 +70,10 @@ export default function Countdown({ targetDate }) {
   }, [targetDate])
 
   const units = [
-    { value: time.days,    label: 'Gün' },
-    { value: time.hours,   label: 'Saat' },
-    { value: time.minutes, label: 'Dakika' },
-    { value: time.seconds, label: 'Saniye' },
+    { value: time.days,    label: t.countdown.units.days },
+    { value: time.hours,   label: t.countdown.units.hours },
+    { value: time.minutes, label: t.countdown.units.minutes },
+    { value: time.seconds, label: t.countdown.units.seconds },
   ]
 
   return (
@@ -93,10 +93,10 @@ export default function Countdown({ targetDate }) {
         style={{ marginBottom: 56 }}
       >
         <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
-          Düğüne Kadar
+          {t.countdown.eyebrow}
         </p>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 48px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
-          Geri Sayım
+          {t.countdown.title}
         </h2>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginTop: 18 }}>
           <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
@@ -127,7 +127,7 @@ export default function Countdown({ targetDate }) {
         transition={{ delay: 0.5, duration: 0.6 }}
         style={{ marginTop: 44, fontFamily: 'Lato, sans-serif', fontSize: 15, color: '#5C3040', letterSpacing: '0.08em' }}
       >
-        29 Ağustos 2026 · Cumartesi · Saat 19:00
+        {t.event.dateLine}
       </motion.p>
     </section>
   )

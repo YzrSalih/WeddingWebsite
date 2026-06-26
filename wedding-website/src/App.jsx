@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react'
 import Hero from './components/Hero'
 import Countdown from './components/Countdown'
 import Details from './components/Details'
 import RSVP from './components/RSVP'
 import Footer from './components/Footer'
+import LanguageSwitcher from './components/LanguageSwitcher'
+import { translations } from './translations'
 
 // ── Düğün Bilgileri ──────────────────────────────────────────
 // Google Maps linkini mekana göre güncelleyebilirsiniz.
@@ -21,13 +24,22 @@ const WEDDING = {
 // ─────────────────────────────────────────────────────────────
 
 export default function App() {
+  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'tr')
+  const t = translations[language]
+
+  useEffect(() => {
+    localStorage.setItem('language', language)
+    document.documentElement.lang = language
+  }, [language])
+
   return (
     <div style={{ minHeight: '100vh', background: '#FDF8F0' }}>
-      <Hero config={WEDDING} />
-      <Countdown targetDate={WEDDING.date} />
-      <Details config={WEDDING} />
-      <RSVP />
-      <Footer config={WEDDING} />
+      <LanguageSwitcher language={language} onChange={setLanguage} label={t.languageLabel} />
+      <Hero config={WEDDING} t={t} />
+      <Countdown targetDate={WEDDING.date} t={t} />
+      <Details config={WEDDING} t={t} />
+      <RSVP t={t} />
+      <Footer config={WEDDING} t={t} />
     </div>
   )
 }

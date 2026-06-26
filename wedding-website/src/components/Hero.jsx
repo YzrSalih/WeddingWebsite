@@ -111,7 +111,7 @@ const C = {
   glow:      'rgba(196,130,142,0.1)',
 }
 
-export default function Hero({ config }) {
+export default function Hero({ config, t }) {
   return (
     <section style={{
       minHeight: '100svh',
@@ -168,12 +168,12 @@ export default function Hero({ config }) {
             letterSpacing: '0.015em',
             fontWeight: 400,
           }}>
-            "İçinizden, kendileriyle huzur bulacağınız eşler yaratması ve aranızda bir sevgi ve merhamet var etmesi O'nun varlığının delillerindendir."
+            {t.verse.full}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
             <div style={{ width: 36, height: 1, background: C.line }}/>
             <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.ayetLine, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700 }}>
-              Rûm Suresi 21. Ayet
+              {t.verse.source}
             </span>
             <div style={{ width: 36, height: 1, background: C.line }}/>
           </div>
@@ -255,7 +255,7 @@ export default function Hero({ config }) {
           transition={{ duration: 0.9, delay: 1.8 }}
           style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, color: C.body, lineHeight: 1.8, marginBottom: 22, letterSpacing: '0.03em' }}
         >
-          Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.
+          {t.hero.invite}
         </motion.p>
 
         {/* Aile */}
@@ -301,10 +301,10 @@ export default function Hero({ config }) {
             2026
           </p>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: C.dateGold, letterSpacing: '0.2em', textTransform: 'uppercase', margin: '0 0 4px', fontWeight: 600 }}>
-            Cumartesi · 19:00
+            {t.event.heroDate}
           </p>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.dateSub, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0, fontWeight: 500 }}>
-            Modularna 3D — Varşova
+            {config.venue} — {t.event.city}
           </p>
         </motion.div>
 
@@ -324,7 +324,7 @@ export default function Hero({ config }) {
           </div>
           <a href="#countdown" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }}>
             <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: C.scroll, letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 500 }}>
-              Geri Sayım
+              {t.nav.countdown}
             </span>
             <motion.div animate={{ y: [0, 7, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>
               <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
