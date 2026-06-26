@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-function DetailCard({ icon, title, lines, mapUrl, delay }) {
+function DetailCard({ icon, title, lines, mapUrl, mapLabel, delay }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -60,14 +60,14 @@ function DetailCard({ icon, title, lines, mapUrl, delay }) {
           <svg width="10" height="13" viewBox="0 0 11 13" fill="none">
             <path d="M5.5 0C3.3 0 1.5 1.8 1.5 4C1.5 7.2 5.5 12 5.5 12C5.5 12 9.5 7.2 9.5 4C9.5 1.8 7.7 0 5.5 0ZM5.5 5.5C4.7 5.5 4 4.8 4 4C4 3.2 4.7 2.5 5.5 2.5C6.3 2.5 7 3.2 7 4C7 4.8 6.3 5.5 5.5 5.5Z" fill="currentColor"/>
           </svg>
-          Haritada Gör
+          {mapLabel}
         </a>
       )}
     </motion.div>
   )
 }
 
-export default function Details({ config }) {
+export default function Details({ config, t }) {
   return (
     <section id="details" style={{ padding: 'clamp(72px, 10vw, 120px) 32px', background: '#FDF6F2' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
@@ -80,10 +80,10 @@ export default function Details({ config }) {
           style={{ textAlign: 'center', marginBottom: 60 }}
         >
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
-            Etkinlik Bilgileri
+            {t.details.eyebrow}
           </p>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 48px)', color: '#4A2C35', fontWeight: 400, margin: 0 }}>
-            Düğün Detayları
+            {t.details.title}
           </h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginTop: 18 }}>
             <div style={{ height: 1, width: 52, background: 'rgba(196,130,142,0.4)' }}/>
@@ -96,7 +96,7 @@ export default function Details({ config }) {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
           <DetailCard
-            delay={0.05} title="Tarih"
+            delay={0.05} title={t.details.dateTitle}
             icon={
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <rect x="2" y="4" width="18" height="16" rx="2" stroke="#C4828E" strokeWidth="1.4"/>
@@ -105,17 +105,18 @@ export default function Details({ config }) {
                 <rect x="6" y="12" width="4" height="4" rx="0.5" fill="#C4828E" opacity="0.4"/>
               </svg>
             }
-            lines={['29 Ağustos 2026', 'Cumartesi', 'Saat 19:00']}
+            lines={[t.event.dateDisplay, t.event.dayName, t.event.timeLabel]}
           />
           <DetailCard
-            delay={0.12} title="Mekan"
+            delay={0.12} title={t.details.venueTitle}
             icon={
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <path d="M11 1.5C7.7 1.5 5 4.2 5 7.5C5 12 11 20 11 20C11 20 17 12 17 7.5C17 4.2 14.3 1.5 11 1.5ZM11 9.5C10 9.5 9.2 8.7 9.2 7.7C9.2 6.7 10 5.9 11 5.9C12 5.9 12.8 6.7 12.8 7.7C12.8 8.7 12 9.5 11 9.5Z" fill="#C4828E" opacity="0.65"/>
               </svg>
             }
-            lines={[config.venue, config.city, 'Varşova, Polonya']}
+            lines={[config.venue, t.event.city, t.event.address]}
             mapUrl={config.mapsUrl}
+            mapLabel={t.details.map}
           />
         </div>
 

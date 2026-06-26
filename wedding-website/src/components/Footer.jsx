@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function Footer({ config }) {
+export default function Footer({ config, t }) {
   return (
     <footer style={{
       padding: '64px 24px 48px',
@@ -48,7 +48,7 @@ export default function Footer({ config }) {
             29 · 08 · 2026
           </p>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#D4A8B4', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 28 }}>
-            {config.venue} — {config.city}
+            {t.event.footerPlace}
           </p>
 
           {/* Ayet */}
@@ -57,16 +57,20 @@ export default function Footer({ config }) {
             background: 'rgba(196,130,142,0.06)', border: '1px solid rgba(196,130,142,0.18)',
           }}>
             <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: 12, color: '#C8A0A8', lineHeight: 1.8, marginBottom: 8 }}>
-              "...aranızda bir sevgi ve merhamet var etmesi O'nun varlığının delillerindendir."
+              {t.verse.short}
             </p>
             <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C9A96E', letterSpacing: '0.15em', fontWeight: 700 }}>
-              Rûm Suresi 21. Ayet
+              {t.verse.source}
             </p>
           </div>
 
           {/* Navigasyon */}
           <div className="footer-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
-            {[{href:'#countdown',label:'Geri Sayım'},{href:'#details',label:'Detaylar'},{href:'#rsvp',label:'Katılım'}].map(l => (
+            {[
+              {href:'#countdown',label:t.nav.countdown},
+              {href:'#details',label:t.nav.details},
+              {href:'#rsvp',label:t.nav.rsvp},
+            ].map(l => (
               <a key={l.href} href={l.href} style={{
                 fontFamily: 'Lato, sans-serif', fontSize: 10, color: '#C8A0A8',
                 textDecoration: 'none', letterSpacing: '0.18em', textTransform: 'uppercase',

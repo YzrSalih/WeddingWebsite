@@ -4,15 +4,15 @@ import { motion } from 'framer-motion'
 const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || ''
 const initialForm = { name: '', guests: '', notes: '' }
 
-export default function RSVP() {
+export default function RSVP({ t }) {
   const [form, setForm]     = useState(initialForm)
   const [status, setStatus] = useState('idle')
   const [errors, setErrors] = useState({})
 
   function validate() {
     const e = {}
-    if (!form.name.trim()) e.name = 'Lütfen adınızı giriniz.'
-    if (!form.guests)       e.guests = 'Lütfen kişi sayısını seçiniz.'
+    if (!form.name.trim()) e.name = t.rsvp.validationName
+    if (!form.guests)       e.guests = t.rsvp.validationGuests
     return e
   }
 
@@ -62,13 +62,13 @@ export default function RSVP() {
           style={{ textAlign: 'center', marginBottom: 40 }}
         >
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: '#7A5A18', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: 14, fontWeight: 700 }}>
-            Katılım Bildirimi
+            {t.rsvp.eyebrow}
           </p>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 5vw, 44px)', color: '#4A2C35', fontWeight: 400, margin: '0 0 16px' }}>
-            Düğünümüze Davetlisiniz
+            {t.rsvp.title}
           </h2>
           <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 1.5vw, 16px)', color: '#5C3040', lineHeight: 1.7 }}>
-            Lütfen 29 Ağustos saat 19:00'da gerçekleşecek olan<br/>düğünümüze katılım durumunuzu belirtiniz.
+            {t.rsvp.description}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 16 }}>
             <div style={{ height: 1, width: 40, background: 'rgba(196,130,142,0.4)' }}/>
@@ -100,9 +100,9 @@ export default function RSVP() {
                 <path d="M5 12L10 17L19 7" stroke="#C4828E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#4A2C35', marginBottom: 8 }}>Teşekkürler!</h3>
+            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#4A2C35', marginBottom: 8 }}>{t.rsvp.successTitle}</h3>
             <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, color: '#8C6068' }}>
-              Katılım bildiriminiz alındı. Sizi görmekten mutluluk duyacağız 🌸
+              {t.rsvp.successMessage}
             </p>
           </motion.div>
         )}
@@ -120,11 +120,11 @@ export default function RSVP() {
             {/* İsim */}
             <div>
               <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
-                İsim Soyisim <span style={{ color: '#C4828E' }}>*</span>
+                {t.rsvp.name} <span style={{ color: '#C4828E' }}>*</span>
               </label>
               <input
                 type="text" name="name" value={form.name} onChange={handleChange}
-                placeholder="Adınız ve soyadınız"
+                placeholder={t.rsvp.namePlaceholder}
                 style={inputStyle('name')}
                 onFocus={e => { e.target.style.borderColor='#C4828E'; e.target.style.boxShadow='0 0 0 3px rgba(196,130,142,0.12)' }}
                 onBlur={e => { e.target.style.borderColor=errors.name?'#F4A0A0':'rgba(196,130,142,0.3)'; e.target.style.boxShadow='none' }}
@@ -135,7 +135,7 @@ export default function RSVP() {
             {/* Kişi sayısı */}
             <div>
               <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 14 }}>
-                Kaç kişi katılacaksınız? <span style={{ color: '#C4828E' }}>*</span>
+                {t.rsvp.guests} <span style={{ color: '#C4828E' }}>*</span>
               </label>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 {['1','2','3','4','5'].map(n => (
@@ -165,11 +165,11 @@ export default function RSVP() {
             {/* Notlar */}
             <div>
               <label style={{ display: 'block', fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#4A2C35', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
-                Notlar
+                {t.rsvp.notes}
               </label>
               <textarea
                 name="notes" value={form.notes} onChange={handleChange} rows={3}
-                placeholder="Varsa alerji veya özel notlarınız..."
+                placeholder={t.rsvp.notesPlaceholder}
                 style={{ ...inputStyle('notes'), resize: 'none' }}
                 onFocus={e => { e.target.style.borderColor='#C4828E'; e.target.style.boxShadow='0 0 0 3px rgba(196,130,142,0.12)' }}
                 onBlur={e => { e.target.style.borderColor='rgba(196,130,142,0.3)'; e.target.style.boxShadow='none' }}
@@ -178,7 +178,7 @@ export default function RSVP() {
 
             {status === 'error' && (
               <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#E07878', textAlign: 'center' }}>
-                Bir hata oluştu. Lütfen tekrar deneyin.
+                {t.rsvp.error}
               </p>
             )}
 
@@ -198,7 +198,7 @@ export default function RSVP() {
               onMouseEnter={e => { if (status !== 'loading') e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)' }}
             >
-              {status === 'loading' ? 'Gönderiliyor...' : 'Katılımı Onayla'}
+              {status === 'loading' ? t.rsvp.loading : t.rsvp.submit}
             </button>
           </motion.form>
         )}
