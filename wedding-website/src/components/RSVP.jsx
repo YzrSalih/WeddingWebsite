@@ -187,11 +187,11 @@ export default function RSVP({ t }) {
               style={{
                 width: '100%', padding: '18px', borderRadius: 14, border: 'none',
                 cursor: status === 'loading' ? 'not-allowed' : 'pointer',
-                background: 'linear-gradient(135deg, #C4828E, #A86070)',
-                color: '#FFF8F8',
+                background: 'linear-gradient(135deg, #B8465A, #8C2D42)',
+                color: '#FFFFFF',
                 fontFamily: 'Lato, sans-serif', fontSize: 13,
                 letterSpacing: '0.22em', textTransform: 'uppercase',
-                boxShadow: '0 6px 24px rgba(196,130,142,0.35)',
+                boxShadow: '0 6px 28px rgba(140,45,66,0.45)',
                 opacity: status === 'loading' ? 0.75 : 1,
                 transition: 'opacity 0.2s, transform 0.15s',
               }}

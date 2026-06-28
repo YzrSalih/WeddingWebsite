@@ -44,7 +44,7 @@ export const translations = {
     rsvp: {
       eyebrow: 'Katılım Bildirimi',
       title: 'Düğünümüze Davetlisiniz',
-      description: 'Lütfen 29 Ağustos saat 19:00\'da gerçekleşecek olan düğünümüze katılım durumunuzu belirtiniz.',
+      description: 'Aşağıdaki formu doldurarak katılım durumunuzu bildirmenizi rica ederiz.',
       name: 'İsim Soyisim',
       namePlaceholder: 'Adınız ve soyadınız',
       guests: 'Kaç kişi katılacaksınız?',
@@ -104,7 +104,7 @@ export const translations = {
     rsvp: {
       eyebrow: 'Potwierdzenie Obecności',
       title: 'Zapraszamy na Nasz Ślub',
-      description: 'Prosimy o potwierdzenie obecności na naszym ślubie, który odbędzie się 29 sierpnia o godzinie 19:00.',
+      description: 'Prosimy o wypełnienie poniższego formularza i potwierdzenie swojej obecności.',
       name: 'Imię i nazwisko',
       namePlaceholder: 'Twoje imię i nazwisko',
       guests: 'Ile osób będzie uczestniczyć?',
