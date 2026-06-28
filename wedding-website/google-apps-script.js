@@ -60,6 +60,16 @@ function doGet() {
 }
 
 function formatSheet_(sheet) {
+  // Önceki toplam satırını temizle (varsa)
+  const totalRows = sheet.getLastRow();
+  for (let r = totalRows; r >= 2; r--) {
+    const val = sheet.getRange(r, 2).getValue();
+    if (val === 'TOPLAM KİŞİ') {
+      sheet.deleteRow(r);
+      break;
+    }
+  }
+
   const lastRow = Math.max(sheet.getLastRow(), 1);
   const lastColumn = 4;
 
@@ -88,6 +98,24 @@ function formatSheet_(sheet) {
       .setHorizontalAlignment('center');
     sheet.getRange(2, 4, lastRow - 1, 1)
       .setWrap(true);
+  }
+
+  // Toplam satırı ekle
+  if (lastRow > 1) {
+    const totalRow = lastRow + 1;
+    sheet.getRange(totalRow, 1, 1, lastColumn).clearContent().clearFormat();
+    sheet.getRange(totalRow, 2).setValue('TOPLAM KİŞİ');
+    sheet.getRange(totalRow, 3).setFormula(`=SUM(C2:C${lastRow})`);
+    sheet.getRange(totalRow, 1, 1, lastColumn)
+      .setBackground('#E9D6DA')
+      .setFontColor('#3A1E28')
+      .setFontWeight('bold')
+      .setFontFamily('Lato')
+      .setFontSize(11)
+      .setVerticalAlignment('middle')
+      .setHorizontalAlignment('center')
+      .setBorder(true, true, true, true, true, true, '#C4828E', SpreadsheetApp.BorderStyle.SOLID);
+    sheet.setRowHeight(totalRow, 34);
   }
 
   sheet.setColumnWidth(1, 150);
